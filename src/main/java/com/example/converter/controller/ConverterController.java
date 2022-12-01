@@ -28,5 +28,12 @@ public class ConverterController {
         return converter.getConversionRate(from, to)*newX;
     }
 
+    @GetMapping("/rate/from/{from}/to/{to}")
+    public Double rate(@PathVariable(name = "from") String from,
+                       @PathVariable(name = "to") String to
+    ) throws IOException {
+        return converter.getConversionRate(from, to);
+    }
+
 
 }
