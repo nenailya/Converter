@@ -18,10 +18,15 @@ public class ConverterController {
         this.converter = converter;
     }
 
-    @GetMapping("/convert/from/USD/to/EUR/{x}")
-    public Double convert(@PathVariable(name = "x") Double x
+
+    @GetMapping("/convert/from/{from}/to/{to}/{x}")
+    public Double convert(@PathVariable(name = "from") String from,
+                          @PathVariable(name = "to") String to,
+                          @PathVariable(name = "x") String x
     ) throws IOException {
-        return converter.getConversionRate()*x;
+        Double newX = Double.parseDouble(x.replace(",", "."));
+        return converter.getConversionRate(from, to)*newX;
     }
+
 
 }
