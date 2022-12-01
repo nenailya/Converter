@@ -38,5 +38,16 @@ public class ConverterController {
         return converter.getConversionRate(from, to);
     }
 
+    @GetMapping("/percent/from/{from}/to/{to}/{x}/{percent}")
+    public Double withPercent(@PathVariable(name = "from") String from,
+                              @PathVariable(name = "to") String to,
+                              @PathVariable(name = "x") String x,
+                              @PathVariable(name = "percent") String percent
+    ) throws IOException {
+        Double newX = Double.parseDouble(x.replace(",", "."));
+        Double newPercent = Double.parseDouble(percent.replace(",", "."))/100;
+        return converter.getConversionRate(from, to)*newX*newPercent;
+    }
+
 
 }
