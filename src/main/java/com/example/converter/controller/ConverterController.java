@@ -18,14 +18,17 @@ public class ConverterController {
         this.converter = converter;
     }
 
-
     @GetMapping("/convert/from/{from}/to/{to}/{x}")
-    public Double convert(@PathVariable(name = "from") String from,
+    public String convert(@PathVariable(name = "from") String from,
                           @PathVariable(name = "to") String to,
                           @PathVariable(name = "x") String x
     ) throws IOException {
-        Double newX = Double.parseDouble(x.replace(",", "."));
-        return converter.getConversionRate(from, to)*newX;
+        try {
+            Double newX = Double.parseDouble(x.replace(",", "."));
+            return  (""+converter.getConversionRate(from, to)*newX);
+        }catch (NumberFormatException e){
+            return "пожалуйста, напишите число правильно";
+        }
     }
 
     @GetMapping("/rate/from/{from}/to/{to}")
