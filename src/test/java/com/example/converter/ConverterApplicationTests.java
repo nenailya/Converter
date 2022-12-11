@@ -1,5 +1,7 @@
 package com.example.converter;
 
+import com.example.converter.interfaces.impl.ConverterImpl;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -9,7 +11,6 @@ class ConverterApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 	@Test
 	public void test() {
 		ConverterImpl converter = new ConverterImpl();

@@ -15,6 +15,11 @@ repositories {
 extra["springCloudVersion"] = "2021.0.5"
 
 dependencies {
+	testImplementation("io.rest-assured:rest-assured:4.3.0")
+	testImplementation("io.rest-assured:json-path:4.3.0")
+	testImplementation("io.rest-assured:xml-path:4.3.0")
+	testImplementation("io.rest-assured:spring-mock-mvc:4.3.0")
+	testImplementation("io.rest-assured:spring-web-test-client:4.3.0")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.cloud:spring-cloud-config-server")
 	implementation("org.springframework.cloud:spring-cloud-starter-config")
