@@ -1,4 +1,9 @@
-# Конвертер v1.0
+```main:```
+![badge](https://github.com/nenailya/Converter/actions/workflows/gradle-test.yml/badge.svg?branch=main)
+```develop:```
+![badge](https://github.com/nenailya/Converter/actions/workflows/gradle-test.yml/badge.svg?branch=develop)
+
+# Конвертер v1.1
 ____
 Небольшой сервис, который будет конвертировать валюту. На вход отправляется сумма в исходной валюте, на выходе получается конвертированная сумма в нужной валюте.
 Кроме того можно узнавать курс валют и подсчитывать курс валюты с добавлением процента к официальной ставке.
