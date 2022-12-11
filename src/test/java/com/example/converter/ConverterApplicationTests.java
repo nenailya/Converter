@@ -10,4 +10,20 @@ class ConverterApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	public void test() {
+		ConverterImpl converter = new ConverterImpl();
+		Assertions.assertEquals(converter.getConversionRate("USD","EUR").getClass(),Double.class);
+	}
+
+	@Test
+	public void test2() {
+		ConverterImpl converter = new ConverterImpl();
+
+		StringIndexOutOfBoundsException thrown = Assertions.assertThrows(StringIndexOutOfBoundsException.class, () -> {
+			converter.getConversionRate("U","E");
+		});
+		Assertions.assertEquals("begin 1, end -3, length 0", thrown.getMessage());
+	}
+
 }
