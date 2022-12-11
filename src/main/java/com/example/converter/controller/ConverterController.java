@@ -20,8 +20,8 @@ public class ConverterController {
 
     @GetMapping("/convert/from/{from}/to/{to}/{x}")
     public String convert(@PathVariable(name = "from") String from,
-                          @PathVariable(name = "to") String to,
-                          @PathVariable(name = "x") String x
+                                 @PathVariable(name = "to") String to,
+                                 @PathVariable(name = "x") String x
     ) throws IOException {
         try {
             Double newX = Double.parseDouble(x.replace(",", "."));
@@ -48,6 +48,7 @@ public class ConverterController {
         Double newPercent = Double.parseDouble(percent.replace(",", "."))/100;
         return converter.getConversionRate(from, to)*newX*newPercent;
     }
+
 
 
 }

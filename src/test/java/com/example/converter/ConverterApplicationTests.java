@@ -1,5 +1,6 @@
 package com.example.converter;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -9,7 +10,6 @@ class ConverterApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 	@Test
 	public void test() {
 		ConverterImpl converter = new ConverterImpl();
@@ -25,5 +25,6 @@ class ConverterApplicationTests {
 		});
 		Assertions.assertEquals("begin 1, end -3, length 0", thrown.getMessage());
 	}
+
 
 }
